@@ -38,7 +38,6 @@ This project focuses on detecting fraudulent credit card transactions using mach
   - GitHub (collaboration)
   - Communication (Discord/ Email)
 
----
 
 ## Dataset
 
@@ -49,7 +48,6 @@ This project focuses on detecting fraudulent credit card transactions using mach
   - Time, Amount
   - Target: `Class` (fraud vs non-fraud)
 
----
 
 ## Data Pipeline
 
@@ -59,7 +57,6 @@ This project focuses on detecting fraudulent credit card transactions using mach
 - Apply scaling where needed
 - Handle imbalance using class weights
 
----
 
 ## Models Implemented
 
@@ -71,7 +68,6 @@ This project focuses on detecting fraudulent credit card transactions using mach
 
 - Neural Network (MLP)  
 
----
 
 ## Evaluation Metrics
 
@@ -84,7 +80,6 @@ Each model is evaluated using:
 - Confusion Matrix
 - Classification Report
 
----
 
 ## Analysis
 
