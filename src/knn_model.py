@@ -1,1 +1,0 @@
-print("KNN Model")
