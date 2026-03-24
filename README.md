@@ -4,6 +4,16 @@
 ## Project Overview
 This project focuses on detecting fraudulent credit card transactions using machine learning models on a highly imbalanced dataset (~284,000 rows).
 
+## Dataset
+
+The dataset used in this project is too large to be stored in this repository.
+
+Download it from:
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+After downloading, place the file in the following directory:
+
+data/creditcard.csv
 
 
 ## Team Roles & Responsibilities
