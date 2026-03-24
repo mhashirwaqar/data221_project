@@ -6,7 +6,6 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, consufion_matrix, ConfusionMatrixDisplay, classification_report
 
 df = pd.read_csv("/kaggle/input/creditcardfraud/creditcard.csv")
-df1.dataframeName = 'creditcard.csv'
 
 
 
