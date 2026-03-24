@@ -1,6 +1,5 @@
 # Data 221 Project: Credit Card Fraud Detection
 
-
 ## Project Overview
 This project focuses on detecting fraudulent credit card transactions using machine learning models on a highly imbalanced dataset (~284,000 rows).
 
