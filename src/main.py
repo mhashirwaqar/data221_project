@@ -23,14 +23,38 @@ def preprocess(dataset):
 
 
 def evaluate(model, X_test, y_test, name):
+    from sklearn.metrics import confusion_matrix, classification_report
+    from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-    # make predictions using trained model
-    # compute confusion matrix
-    # compute classification report
-    # print results with model name
+    print("\n" + "="*50)
+    print(f"Model: {name}")
+    print("="*50)
 
-    return 0
+    # Get predictions
+    y_pred = model.predict(X_test)
 
+    # If output is probabilities (Neural Network / Logistic), convert to 0/1
+    y_pred = (y_pred > 0.5).astype(int).flatten()
+
+    # Compute metrics
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+
+    # Print metrics
+    print("Accuracy: ", round(accuracy, 4))
+    print("Precision:", round(precision, 4))
+    print("Recall:   ", round(recall, 4))
+    print("F1-score: ", round(f1, 4))
+
+    # Confusion Matrix
+    print("\nConfusion Matrix:")
+    print(confusion_matrix(y_test, y_pred))
+
+    # Classification Report (nice table)
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_pred))
 
 def main():
 
