@@ -14,6 +14,7 @@ def load_data():
 
 def preprocess(dataset):
 
+    # TODO: Complete this function to make file running without errors
     # separate features and target column
     # perform train test split with stratification
     # apply standard scaling
@@ -26,9 +27,9 @@ def evaluate(model, X_test, y_test, name):
     from sklearn.metrics import confusion_matrix, classification_report
     from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-    print("\n" + "="*50)
-    print(f"Model: {name}")
-    print("="*50)
+    print("\n------------------------------")
+    print(" Evaluating:", name)
+    print("------------------------------")
 
     # Get predictions
     y_pred = model.predict(X_test)

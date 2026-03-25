@@ -1,6 +1,5 @@
+def train_logistic(X_train, y_train):
 
-def train_logistic():
+    # TODO: Implement Logistic Regression model here
 
-    # write your code here
-
-    return 0
+    return None

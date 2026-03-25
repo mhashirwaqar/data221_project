@@ -1,7 +1,11 @@
 # TEAM COMMENT: Please add your code inside this function so it can be easily imported to main.py
-def train_tree():
-    return 0
+def train_tree(X_train, y_train):
 
+    # TODO: Implement Decision Tree model here inside the function that returns model only
+
+    return None
+
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -35,7 +39,7 @@ print ("F1-score:", round(f1, 4))
 print ("ROC-AUC:", round(roc_auc , 4))
 
 print ("\nClassification Report:")
-print (classification_report(y_test, y_pred, zero_division = 0)
+print (classification_report(y_test, y_pred, zero_division = 0))
 #Confusion Matrix Visualization
 cm = confusion_matrix(y_test, y_pred)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm)
@@ -50,5 +54,5 @@ feature_importance = pd.DataFrame({"Feature": X.columns, "Importance": dt_model.
 feature_importance = feature_importance.sort_values(by = "Importance", ascending = False)
 
 top_features = feature_importance.head(10)
-
+"""
 
