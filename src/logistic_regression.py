@@ -1,5 +1,8 @@
-def train_logistic(X_train, y_train):
+# TODO: Implement Logistic Regression model here
 
-    # TODO: Implement Logistic Regression model here
+from sklearn.linear_model import LogisticRegression
 
-    return None
+def train_logistic(X_train_scaled, y_train):
+    model = LogisticRegression(class_weight='balanced')
+    model.fit(X_train_scaled, y_train)
+    return model
