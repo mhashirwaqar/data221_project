@@ -20,6 +20,26 @@ def preprocess(dataset):
     # apply standard scaling
     # return training and testing data
 
+    #Adding Changes - Mudit
+    
+    from sklearn.preprocessing import StandardScaler
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+
+    class_weight = 'balanced'
+    from sklearn.linear_model import LogisticRegression
+    model = LogisticRegression(class_weight = 'balanced')
+    model.fit(X_train_scaled, y_train)
+
+    from sklearn.metrics import classification_report, confusion_matrix
+    y_pred = model.predict(X_test)
+    cm = confusion_matrix(y_test, y_pred)
+    print(confusion_matrix(y_test, y_pred))
+
+    
+    #Changes Added
+
     return 0, 0, 0, 0
 
 
