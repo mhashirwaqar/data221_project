@@ -16,5 +16,23 @@ def train_network(X_train, y_train):
     model.add(Dense(32, activation='relu'))
     model.add(Dense(16, activation='relu'))
 
+    # Output layer (binary classification)
+    model.add(Dense(1, activation='sigmoid'))
+
+    # Compile model
+    model.compile(
+        optimizer='adam',
+        loss='binary_crossentropy',
+        metrics=['accuracy']
+    )
+
+    # Train model
+    model.fit(
+        X_train,
+        y_train,
+        epochs=10,
+        batch_size=32,
+        verbose=1
+    )
 
     return model
