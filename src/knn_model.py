@@ -4,6 +4,8 @@ import numpy as np
 def train_knn(X_train_scaled, y_train, k_values = None, cross_validation = 5):
     best_f1 = 0
     best_k = k_values[0]  # default to first value
+    if k_values is None: #default k values if none are given
+        k_values = list(range(1, 20, 2))
 
     for k in k_values:
         knn = KNeighborsClassifier(n_neighbors=k)
@@ -15,4 +17,4 @@ def train_knn(X_train_scaled, y_train, k_values = None, cross_validation = 5):
 
     best_model = KNeighborsClassifier(n_neighbors=best_k)
     best_model.fit(X_train_scaled, y_train)
-    return best_model, best_k
+    return best_model
