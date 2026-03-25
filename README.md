@@ -19,7 +19,7 @@ This project focuses on detecting fraudulent credit card transactions using mach
 
 - **Member 4**
   - Evaluation (metrics collection, comparison table)
-  - Neural Network (MLP)
+  - Neural Network
 
 
 ## Project Setup
