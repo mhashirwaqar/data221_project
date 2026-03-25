@@ -34,12 +34,16 @@ def evaluate(model, X_test, y_test, name):
 
 def main():
 
-    # Example
+    # Calling Load_data Function
     dataset = load_data()
+
+    # Checking the Shape of Dataset
+    print("\nShape of Dataset")
     print(dataset.head())
 
-    # step 1: load data
-    # call load_data()
+    # Exploring the data
+    print("\nDataset Features")
+    print(dataset.describe())
 
     # step 2: preprocess data
     # call preprocess()
