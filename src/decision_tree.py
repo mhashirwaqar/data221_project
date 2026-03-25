@@ -1,4 +1,8 @@
-import pandas as pd 
+# TEAM COMMENT: Please add your code inside this function so it can be easily imported to main.py
+def train_tree():
+    return 0
+
+import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
@@ -6,8 +10,6 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, consufion_matrix, ConfusionMatrixDisplay, classification_report
 
 df = pd.read_csv("/kaggle/input/creditcardfraud/creditcard.csv")
-
-
 
 
 X_train, X_test, y_train, y_test = train_test_split (X, y, test_size = 0.2, random_state = 42, stratify = y)

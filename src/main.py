@@ -37,30 +37,37 @@ def main():
     # Calling Load_data Function
     dataset = load_data()
 
-    # Checking the Shape of Dataset
-    print("\nShape of Dataset")
+    # Checking the Dataset
+    print("\nDataset Preview")
     print(dataset.head())
 
     # Exploring the data
-    print("\nDataset Features")
+    print("\nDataset Description")
     print(dataset.describe())
 
-    # step 2: preprocess data
-    # call preprocess()
+    # Preprocess the data
+    X_train, X_test, y_train, y_test = preprocess(dataset)
 
-    # step 3: train models
-    # call:
-    # train_logistic()
-    # train_knn()
-    # train_tree()
-    # train_network()
+    # Importing all the models from different files
+    from logistic_regression import train_logistic
+    from knn_model import train_knn
+    from decision_tree import train_tree
+    from neural_network import train_network
 
-    # store all trained models (e.g., in dictionary)
+    # Training all Models and storing them in Dictionary
+    models = {
+        "Logistic Regression": train_logistic(X_train, y_train),
+        "KNN": train_knn(X_train, y_train),
+        "Decision Tree": train_tree(X_train, y_train),
+        "Neural Network": train_network(X_train, y_train)
+    }
 
-    # step 4: evaluate each model
-    # loop through models and call evaluate()
+    # Evaluate all models
+    for name, model in models.items():
+        evaluate(model, X_test, y_test, name)
 
-    return 0
+# --------------
 
+# Running the main python file
 if __name__ == "__main__":
     main()
