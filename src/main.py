@@ -12,35 +12,40 @@ def load_data():
 
     return dataset
 
+#Adding Preprocessing function - Mudit
+
 def preprocess(dataset):
+    """
+    Preprocess the dataset:
+    - Separate features (X) and target (y)
+    - Perform train-test split (80:20) with stratification
+    - Apply standard scaling
+    - Return processed train and test sets
+    """
 
-    # TODO: Complete this function to make file running without errors
-    # separate features and target column
-    # perform train test split with stratification
-    # apply standard scaling
-    # return training and testing data
-
-    #Adding Changes - Mudit
-    
+    from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import StandardScaler
+
+    # Separate features and target
+    X = dataset.drop("Class", axis=1)  # all columns except target
+    y = dataset["Class"]               # target column
+
+    # Train-test split (80% train, 20% test) with stratification
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y,
+        test_size=0.2,
+        stratify=y,
+        random_state=42
+    )
+
+    # Apply standard scaling
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
 
-    class_weight = 'balanced'
-    from sklearn.linear_model import LogisticRegression
-    model = LogisticRegression(class_weight = 'balanced')
-    model.fit(X_train_scaled, y_train)
+    return X_train_scaled, X_test_scaled, y_train, y_test
 
-    from sklearn.metrics import classification_report, confusion_matrix
-    y_pred = model.predict(X_test)
-    cm = confusion_matrix(y_test, y_pred)
-    print(confusion_matrix(y_test, y_pred))
-
-    
-    #Changes Added
-
-    return 0, 0, 0, 0
+    #Added preprocessing function - Mudit
 
 
 def evaluate(model, X_test, y_test, name):
