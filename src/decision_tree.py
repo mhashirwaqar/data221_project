@@ -8,20 +8,20 @@ def train_decision_tree(X_train, y_train, depth_values=None, cross_validation=5)
     if depth_values is None:
         depth_values = [3, 4, 5, 7, 10]
 
-    # Initialize variables to track the best model performance
+    # Initialize variables to track the best model
     best_f1 = -1
     best_depth = depth_values[0]
 
-    # Loop through each possible max_depth value
+    # Try different values of max_depth
     for depth in depth_values:
         # Create a Decision Tree model with the current depth
         dt = DecisionTreeClassifier(max_depth=depth, random_state=42)
 
-        # Use cross-validation to evaluate the model
+        # Evaluate the model using cross-validation (F1-score)
         scores = cross_val_score(dt, X_train, y_train, cv=cross_validation, scoring="f1")
         mean_f1 = np.mean(scores)
 
-        # Update best depth if current model has higher F1 score
+        # Update best depth if the current model performs better
         if mean_f1 > best_f1:
             best_f1 = mean_f1
             best_depth = depth
@@ -30,5 +30,4 @@ def train_decision_tree(X_train, y_train, depth_values=None, cross_validation=5)
     best_model = DecisionTreeClassifier(max_depth=best_depth, random_state=42)
     best_model.fit(X_train, y_train)
 
-    # Return the trained model, best depth, and best F1 score
-    return best_model, best_depth, best_f1
+    return best_model
