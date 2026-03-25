@@ -1,4 +1,3 @@
-# TEAM COMMENT: Please add your code inside this function so it can be easily imported to main.py
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import cross_val_score
 import numpy as np
@@ -25,6 +24,10 @@ def train_decision_tree(X_train, y_train, depth_values=None, cross_validation=5)
         if mean_f1 > best_f1:
             best_f1 = mean_f1
             best_depth = depth
+    # For the Decision Tree model, we used cross-validation to select the best max_depth.
+    # We tested multiple depth values and evaluated each model using the F1-score, since our dataset
+    # is highly imbalanced. We then selected the depth that achieved the highest average F1-score
+    # trained the final model using that parameter.
 
     # Train the final model using the best depth found
     best_model = DecisionTreeClassifier(max_depth=best_depth, random_state=42)
