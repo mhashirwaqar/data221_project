@@ -1,6 +1,13 @@
+def train_network(X_train, y_train):
 
-def train_network():
+    import tensorflow as tf
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import Dense, InputLayer
 
-    # write your code here
+    # Set seed
+    tf.random.set_seed(1)
 
-    return 0
+    # Create model
+    model = Sequential()
+
+    return model
