@@ -50,6 +50,7 @@ def train_decision_tree(X_train, y_train, depth_values=None, cross_validation=5)
         class_weight='balanced'           # handles imbalanced dataset (fraud detection)
     )
 
-    best_model.fit(X_train, y_train)      # Train model on full training dataset
+    # Train model on full training dataset
+    best_model.fit(X_train, y_train)
 
     return best_model
