@@ -60,7 +60,7 @@ def evaluate(model, X_test, y_test, name):
     y_pred = model.predict(X_test)
 
     # If output is probabilities (Neural Network / Logistic), convert to 0/1
-    y_pred = (y_pred > 0.5).astype(int).flatten()
+    y_pred = (y_pred > 0.2).astype(int).flatten()
 
     # Compute metrics
     accuracy = accuracy_score(y_test, y_pred)
