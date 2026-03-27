@@ -1,9 +1,10 @@
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, InputLayer
+from sklearn.utils import class_weight
+import numpy as np
+
 def train_network(X_train, y_train):
-    import tensorflow as tf
-    from tensorflow.keras.models import Sequential
-    from tensorflow.keras.layers import Dense, InputLayer
-    from sklearn.utils import class_weight
-    import numpy as np
 
     # Set random seed for reproducibility (ensures same results every run)
     tf.random.set_seed(1)
