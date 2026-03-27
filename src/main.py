@@ -50,7 +50,7 @@ def evaluate(model, X_test, y_test, name):
     y_pred = model.predict(X_test)
 
     # If output is probability (Neural Network), convert to binary
-    if len(y_pred.shape) > 1 or y_pred.dtype != int:
+    if len(y_pred.shape) > 1:
         y_pred = (y_pred > 0.2).astype(int).flatten()
 
     # Compute metrics
