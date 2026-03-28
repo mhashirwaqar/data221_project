@@ -90,7 +90,7 @@ This project demonstrates the importance of:
 - Mudit Jindal  
 
 Course: DATA 221  
-Section: T03  
+Lab: T03  
 Date: March 27, 2026  
 
 
